@@ -1,0 +1,3 @@
+sku,name,brand,category,description,price,currency,availability,source
+SKU-MON-027,27 Inch Studio Monitor,ViewPeak,Displays,"Color-accurate QHD monitor with refreshed import price.",299.00,USD,in_stock,sample-csv
+SKU-STAND-008,Aluminum Laptop Stand,Portsmith,Accessories,"Foldable laptop stand for hybrid work.",34.99,USD,in_stock,sample-csv

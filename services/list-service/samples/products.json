@@ -1,0 +1,26 @@
+{
+  "products": [
+    {
+      "sku": "SKU-MECH-001",
+      "name": "Aurora Mechanical Keyboard",
+      "brand": "Northline",
+      "category": "Accessories",
+      "description": "Hot-swappable keyboard with tactile switches and updated importer price.",
+      "price": 109.99,
+      "currency": "USD",
+      "availability": "in_stock",
+      "source": "sample-json"
+    },
+    {
+      "sku": "SKU-MOUSE-044",
+      "name": "Precision Wireless Mouse",
+      "brand": "Northline",
+      "category": "Accessories",
+      "description": "Ergonomic wireless mouse with silent switches.",
+      "price": 49.95,
+      "currency": "USD",
+      "availability": "in_stock",
+      "source": "sample-json"
+    }
+  ]
+}

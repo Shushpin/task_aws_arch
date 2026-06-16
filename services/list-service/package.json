@@ -1,0 +1,16 @@
+{
+  "name": "catalog-list-service",
+  "version": "0.1.0",
+  "private": true,
+  "description": "List Service for Product Catalog & Price Tracking API",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "check": "node --check src/server.js && node --check src/config.js && node --check src/db.js && node --check src/cache.js && node --check src/repository.js && node --check src/importParser.js && node --check src/logger.js"
+  },
+  "dependencies": {
+    "pg": "^8.13.1",
+    "redis": "^4.7.0"
+  },
+  "devDependencies": {}
+}
