@@ -23,3 +23,9 @@ variable "availability_zones" {
 variable "environment" {
   default = "dev"
 }
+
+variable "nat_instance_type" {
+  description = "Instance type for fck-nat"
+  type        = string
+  default     = "t3.micro"
+}
