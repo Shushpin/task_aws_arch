@@ -5,9 +5,9 @@ resource "aws_vpc" "main" {
   enable_dns_hostnames = true
 
   tags = merge(
-  local.common_tags,
-  {
-    Name = "${var.project_name}-vpc"
-  }
-)
+    local.common_tags,
+    {
+      Name = "${var.project_name}-vpc"
+    }
+  )
 }

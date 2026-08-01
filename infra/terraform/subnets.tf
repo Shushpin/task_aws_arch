@@ -6,12 +6,12 @@ resource "aws_subnet" "public_1a" {
 
 
   tags = merge(
-  local.common_tags,
-  {
-    Name = "catalog-public-1a"
-    Type = "public"
-  }
-)
+    local.common_tags,
+    {
+      Name = "catalog-public-1a"
+      Type = "public"
+    }
+  )
 }
 
 resource "aws_subnet" "public_1b" {
@@ -21,12 +21,12 @@ resource "aws_subnet" "public_1b" {
   map_public_ip_on_launch = true
 
   tags = merge(
-  local.common_tags,
-  {
-    Name = "catalog-public-1b"
-    Type = "public"
-  }
-)
+    local.common_tags,
+    {
+      Name = "catalog-public-1b"
+      Type = "public"
+    }
+  )
 }
 
 resource "aws_subnet" "private_app_1a" {
@@ -35,12 +35,12 @@ resource "aws_subnet" "private_app_1a" {
   availability_zone = var.availability_zones[0]
 
   tags = merge(
-  local.common_tags,
-  {
-    Name = "catalog-app-1a"
-    Type = "private-app"
-  }
-)
+    local.common_tags,
+    {
+      Name = "catalog-app-1a"
+      Type = "private-app"
+    }
+  )
 }
 
 resource "aws_subnet" "private_app_1b" {
@@ -48,13 +48,13 @@ resource "aws_subnet" "private_app_1b" {
   cidr_block        = "10.0.12.0/24"
   availability_zone = var.availability_zones[1]
 
-   tags = merge(
-  local.common_tags,
-  {
-    Name = "catalog-app-1b"
-    Type = "private-app"
-  }
-)
+  tags = merge(
+    local.common_tags,
+    {
+      Name = "catalog-app-1b"
+      Type = "private-app"
+    }
+  )
 }
 
 resource "aws_subnet" "private_data_1a" {
@@ -63,12 +63,12 @@ resource "aws_subnet" "private_data_1a" {
   availability_zone = var.availability_zones[0]
 
   tags = merge(
-  local.common_tags,
-  {
-    Name = "catalog-data-1a"
-    Type = "private-data"
-  }
-)
+    local.common_tags,
+    {
+      Name = "catalog-data-1a"
+      Type = "private-data"
+    }
+  )
 }
 
 resource "aws_subnet" "private_data_1b" {
@@ -76,7 +76,7 @@ resource "aws_subnet" "private_data_1b" {
   cidr_block        = "10.0.22.0/24"
   availability_zone = var.availability_zones[1]
 
- tags = merge(
+  tags = merge(
     local.common_tags,
     {
       Name = "catalog-data-1b"

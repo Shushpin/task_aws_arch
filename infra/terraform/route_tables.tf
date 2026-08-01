@@ -2,11 +2,11 @@ resource "aws_route_table" "public" {
   vpc_id = aws_vpc.main.id
 
   tags = merge(
-  local.common_tags,
-  {
-    Name = "catalog-public-rt"
-  }
-)
+    local.common_tags,
+    {
+      Name = "catalog-public-rt"
+    }
+  )
 }
 resource "aws_route" "public_internet" {
   route_table_id         = aws_route_table.public.id
@@ -28,11 +28,11 @@ resource "aws_route_table" "private_app" {
   vpc_id = aws_vpc.main.id
 
   tags = merge(
-  local.common_tags,
-  {
-    Name = "catalog-private-app-rt"
-  }
-)
+    local.common_tags,
+    {
+      Name = "catalog-private-app-rt"
+    }
+  )
 }
 resource "aws_route_table_association" "private_app_1a" {
   subnet_id      = aws_subnet.private_app_1a.id
@@ -48,11 +48,11 @@ resource "aws_route_table" "private_data" {
   vpc_id = aws_vpc.main.id
 
   tags = merge(
-  local.common_tags,
-  {
-    Name = "catalog-private-data-rt"
-  }
-)
+    local.common_tags,
+    {
+      Name = "catalog-private-data-rt"
+    }
+  )
 }
 resource "aws_route_table_association" "private_data_1a" {
   subnet_id      = aws_subnet.private_data_1a.id
