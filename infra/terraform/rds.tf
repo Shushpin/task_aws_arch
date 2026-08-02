@@ -11,21 +11,6 @@ resource "aws_db_subnet_group" "main" {
   })
 }
 
-variable "db_name" {
-  type    = string
-  default = "catalogdb"
-}
-
-variable "db_username" {
-  type    = string
-  default = "catalog_admin"
-}
-
-variable "db_password" {
-  type      = string
-  sensitive = true
-}
-
 resource "aws_db_instance" "postgres" {
   identifier = "catalog-postgres"
 

@@ -30,3 +30,10 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+.env

@@ -29,3 +29,21 @@ variable "nat_instance_type" {
   type        = string
   default     = "t3.micro"
 }
+
+variable "db_name" {
+  description = "PostgreSQL database name"
+  type        = string
+  default     = "catalogdb"
+}
+
+variable "db_username" {
+  description = "PostgreSQL admin username"
+  type        = string
+  default     = "catalog_admin"
+}
+
+variable "db_password" {
+  description = "PostgreSQL admin password"
+  type        = string
+  sensitive   = true
+}
