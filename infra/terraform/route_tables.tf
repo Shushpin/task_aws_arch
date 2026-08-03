@@ -44,6 +44,13 @@ resource "aws_route_table_association" "private_app_1b" {
   route_table_id = aws_route_table.private_app.id
 }
 
+resource "aws_route" "private_app_nat" {
+  route_table_id         = aws_route_table.private_app.id
+  destination_cidr_block = "0.0.0.0/0"
+
+  network_interface_id = aws_instance.nat.primary_network_interface_id
+}
+
 resource "aws_route_table" "private_data" {
   vpc_id = aws_vpc.main.id
 
@@ -54,6 +61,14 @@ resource "aws_route_table" "private_data" {
     }
   )
 }
+
+resource "aws_route" "private_data_nat" {
+  route_table_id         = aws_route_table.private_data.id
+  destination_cidr_block = "0.0.0.0/0"
+
+  network_interface_id = aws_instance.nat.primary_network_interface_id
+}
+
 resource "aws_route_table_association" "private_data_1a" {
   subnet_id      = aws_subnet.private_data_1a.id
   route_table_id = aws_route_table.private_data.id

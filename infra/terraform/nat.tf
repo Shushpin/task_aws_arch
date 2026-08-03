@@ -80,3 +80,13 @@ resource "aws_eip_association" "nat" {
 
   instance_id = aws_instance.nat.id
 }
+
+resource "aws_vpc_security_group_ingress_rule" "nat_from_vpc" {
+  security_group_id = aws_security_group.nat.id
+
+  ip_protocol = "-1"
+
+  cidr_ipv4 = var.vpc_cidr
+
+  description = "Allow traffic from VPC to NAT"
+}

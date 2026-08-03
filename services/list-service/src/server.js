@@ -9,6 +9,12 @@ import { parseProductsImport } from './importParser.js';
 import { createLogger } from './logger.js';
 
 const config = loadConfig();
+
+console.log("================================");
+console.log("REDIS_URL =", config.redisUrl);
+console.log("DATABASE_URL =", config.databaseUrl);
+console.log("================================");
+
 const logger = createLogger(config.serviceName, config.logLevel);
 const db = createDb(config, logger);
 const cache = await createCache(config.redisUrl, logger);
