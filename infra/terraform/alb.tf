@@ -34,8 +34,8 @@ resource "aws_lb_target_group" "catalog" {
 
   health_check {
 
-    path = "/ready"
-
+    path = "/live"
+    
     protocol = "HTTP"
 
     matcher = "200"

@@ -83,6 +83,27 @@ Liveness endpoint. Confirms the process is running without checking dependencies
 - Dockerfile runs as the non-root `node` user.
 - Docker and Compose healthchecks call `/ready`.
 - Redis cache TTL is controlled by `CACHE_TTL_SECONDS`.
+- In `NODE_ENV=production`, `DATABASE_URL` and `REDIS_URL` are required and must not point to localhost.
+
+## Redis Diagnostics
+
+On startup, the service logs the sanitized Redis target:
+
+```json
+{"message":"Connecting Redis client","redisUrl":"redis://redis:6379","configuredRedis":{"protocol":"redis","host":"redis","port":"6379"}}
+```
+
+If Redis reconnects or errors, logs include both the configured target and the socket error fields (`address`, `port`, `code`) when Node provides them. In ECS, `configuredRedis.host` should be the ElastiCache endpoint, never `127.0.0.1`.
+
+Validate production config locally:
+
+```bash
+cd services/list-service
+NODE_ENV=production \
+DATABASE_URL=postgres://user:password@db.example:5432/catalog \
+REDIS_URL=redis://cache.example:6379 \
+npm run config:check
+```
 
 ### `GET /products`
 

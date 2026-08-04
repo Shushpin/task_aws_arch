@@ -42,7 +42,7 @@ resource "aws_ecs_task_definition" "catalog" {
     {
       name = "catalog-list-service"
 
-      image = "114171679692.dkr.ecr.eu-central-1.amazonaws.com/catalog-list-service:v4"
+      image = "114171679692.dkr.ecr.eu-central-1.amazonaws.com/catalog-list-service:v5"
 
       essential = true
 

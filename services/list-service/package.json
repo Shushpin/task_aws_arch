@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node src/server.js",
-    "check": "node --check src/server.js && node --check src/config.js && node --check src/db.js && node --check src/cache.js && node --check src/repository.js && node --check src/importParser.js && node --check src/logger.js"
+    "check": "node --check src/server.js && node --check src/config.js && node --check src/db.js && node --check src/cache.js && node --check src/repository.js && node --check src/importParser.js && node --check src/logger.js",
+    "config:check": "node -e \"import('./src/config.js').then(({ loadConfig, redactUrl }) => { const c = loadConfig(); console.log(JSON.stringify({ nodeEnv: c.nodeEnv, databaseUrl: redactUrl(c.databaseUrl), redisUrl: redactUrl(c.redisUrl) }, null, 2)); })\""
   },
   "dependencies": {
     "pg": "^8.13.1",
